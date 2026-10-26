@@ -1,0 +1,14 @@
+BUILD STATUS — chase.lol - obb editor
+====================================
+
+Included: full original UABEAvalonia-based source, APK archive editor, Unity asset/bundle tooling, and managed texture/audio/font/text plugins.
+
+Changes in this package:
+- Removed duplicate root solution file so root builds are not ambiguous.
+- Removed the native C++ project from the main solution; native texture codecs remain optional.
+- Added a Windows x64 self-contained single-file publish script and managed plugin packaging.
+- Improved plugin dependency lookup and optional native DLL resolution/failure handling.
+- Updated GitHub CI workflows to target the remaining solution and new build script.
+- Static checks passed for XML/XAML/project files, project paths, and APK XAML control names.
+
+Limit: the .NET SDK is not installed in the current execution environment, and DNS/network restrictions prevent installing it here. Consequently, this package does not contain a compiled EXE and a real compiler pass could not be run in this environment. On Windows with .NET SDK 10 installed and NuGet access available, run build-release.bat; it verifies the EXE and required plugin files before reporting success.
